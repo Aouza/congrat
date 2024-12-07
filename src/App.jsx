@@ -2,7 +2,6 @@ import Home from "./pages/home/home";
 import Congratulations from "./pages/congrat/congrat";
 import Cards from "./pages/cards/cards";
 import Audio from "./pages/audio/audio";
-import { Analytics } from "@vercel/analytics/next";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Accept from "./pages/accept/accept";
@@ -20,7 +19,6 @@ function App() {
         <Route path="/eagora" element={<Accept />} />
         <Route path="/presente" element={<Gift />} />
         <Route path="/fim" element={<End />} />
-        <Analytics />
       </Routes>
     </Router>
   );

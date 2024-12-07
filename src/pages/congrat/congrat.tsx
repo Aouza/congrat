@@ -12,6 +12,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 const Title = styled.h1`
@@ -21,7 +25,7 @@ const Title = styled.h1`
 
 const Message = styled.p`
   text-align: left;
-  padding: 0 6rem;
+  padding: 0 2rem;
   font-size: 1.2em;
   color: #333;
 `;
