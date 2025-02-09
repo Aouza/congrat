@@ -1,4 +1,5 @@
 import Home from "./pages/home/home";
+import Anniversary from "./pages/anniversary/anniversary";
 import Congratulations from "./pages/congrat/congrat";
 import Cards from "./pages/cards/cards";
 import Audio from "./pages/audio/audio";
@@ -13,6 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/aniversario" element={<Anniversary />} />
         <Route path="/parabens" element={<Congratulations />} />
         <Route path="/cartoes" element={<Cards />} />
         <Route path="/audio" element={<Audio />} />
