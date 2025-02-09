@@ -1,33 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-
-const AnimatedDots = () => (
-  <span className="animated-dots">
-    <span className="dot dot1">.</span>
-    <span className="dot dot2">.</span>
-    <span className="dot dot3">.</span>
-  </span>
-);
+import { trackEvent, trackPageView } from "../../../trackingService";
 
 const Counter = ({ diff }) => (
-  <div className="counter">
+  <div className="counter loading-text">
     {diff.months >= 1 ? (
       <>
         {diff.months} {diff.months === 1 ? "mês" : "meses"} e {diff.days}{" "}
         {diff.days === 1 ? "dia" : "dias"}
-        <AnimatedDots />
       </>
     ) : (
       <>
-        {diff.days} {diff.days === 1 ? "dia" : "dias"} .
-        <AnimatedDots />
+        {diff.days} {diff.days === 1 ? "dia" : "dias"}
       </>
     )}
   </div>
 );
-
-import { trackEvent, trackPageView } from "../../../trackingService";
 
 const Home = () => {
   const [diff, setDiff] = useState({ months: 0, days: 0 });
@@ -62,6 +51,9 @@ const Home = () => {
 
   const renderDefault = () => (
     <>
+      <div className="cloudy-illustration">
+        <img src="/nublado.png" alt="Clima nublado" />
+      </div>
       <Counter diff={diff} />
       <p className="question">Deseja que o contador continue avançando?</p>
       <div className="buttons">
@@ -99,6 +91,9 @@ const Home = () => {
 
   const renderGreen = () => (
     <>
+      <div className="cloudy-illustration">
+        <img src="/nublado.png" alt="Clima nublado" />
+      </div>
       <Counter diff={diff} />
       <div className="back-container">
         <button
@@ -121,6 +116,9 @@ const Home = () => {
 
   const renderRed = () => (
     <>
+      <div className="sun-gif">
+        <img src="/sol.gif" alt="Sol gif" />
+      </div>
       <div className="message">Me ajude a fazer esse contador parar 🧑🏼‍🚀</div>
       <div className="back-container">
         <button

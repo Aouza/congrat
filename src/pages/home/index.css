@@ -1,5 +1,6 @@
+body,
 .home {
-  font-family: Arial, sans-serif;
+  font-family: "ui-sans-serif", sans-serif;
 }
 
 .header {
@@ -26,13 +27,24 @@
   justify-content: center;
   height: calc(100vh - 68px);
   background-color: #fff;
-  padding: 1rem;
 }
 
-/* Counter e mensagens */
-.counter {
-  font-size: 2rem;
-  text-align: center;
+@keyframes gradient-scroll {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+
+.loading-text {
+  font-size: 1.4rem;
+  background: linear-gradient(90deg, #fff, #333, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-scroll 4s infinite ease;
 }
 
 .question {
@@ -41,11 +53,10 @@
 }
 
 .message {
-  font-size: 2rem;
+  font-size: 1.4rem;
   text-align: center;
 }
 
-/* Botões */
 .buttons {
   display: flex;
   gap: 1rem;
@@ -75,32 +86,34 @@
   margin-top: 1rem;
 }
 
-/* Animação dos pontos */
-@keyframes fade {
-  0%,
-  80%,
-  100% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
+/* Estilo para a ilustração de clima nublado */
+.cloudy-illustration {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.animated-dots .dot {
-  opacity: 0;
-  animation: fade 1.4s infinite;
-  display: inline-block;
+.cloudy-illustration img {
+  width: 200px; /* ajuste conforme desejado */
+  height: auto;
 }
 
-.dot1 {
-  animation-delay: 0s;
+/* Estilo para a ilustração de clima nublado */
+.cloudy-illustration {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.dot2 {
-  animation-delay: 0.2s;
+.cloudy-illustration img {
+  width: 200px; /* ajuste conforme desejado */
+  height: auto;
 }
 
-.dot3 {
-  animation-delay: 0.4s;
+/* Novo estilo para o GIF do sol */
+.sun-gif {
+  text-align: center;
+}
+
+.sun-gif img {
+  width: 200px; /* ajuste conforme o tamanho desejado */
+  height: auto;
 }
